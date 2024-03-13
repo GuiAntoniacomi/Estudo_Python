@@ -47,6 +47,7 @@ n = int(input('Digite um número:'))
         print(f'{n} é primo')
     else:
         print(f'{n} não é primo')
+
 # Agora utilizando For
 n = int(input('Digite um número:'))
 primo = True
@@ -58,3 +59,19 @@ if primo and n > 1:
     print(f'{n} é primo')
 else:
     print(f'{n} não é primo')
+
+# Descobrir se as pessoas da lista atingiram a maioridade:
+from datetime import datetime
+ano_atual = datetime.today().year
+maioridade = 0
+menoridade = 0
+
+for i in range(7):
+    ano_nasc = int(input(f'Digite o ano de nascimento da {i+1}ª pessoas:'))
+    idade = ano_atual - ano_nasc
+    if idade >= 21:
+        maioridade += 1
+    else:   
+        menoridade += 1
+print(f'{maioridade} pessoas já atingiram a maioridade.')
+print(f'{menoridade} pessoas ainda não atingiram a maioridade.')
