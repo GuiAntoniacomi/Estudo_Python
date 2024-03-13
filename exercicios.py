@@ -67,7 +67,7 @@ maioridade = 0
 menoridade = 0
 
 for i in range(7):
-    ano_nasc = int(input(f'Digite o ano de nascimento da {i+1}ª pessoas:'))
+    ano_nasc = int(input(f'Digite o ano de nascimento da {i+1}ª pessoa:'))
     idade = ano_atual - ano_nasc
     if idade >= 21:
         maioridade += 1
@@ -75,3 +75,42 @@ for i in range(7):
         menoridade += 1
 print(f'{maioridade} pessoas já atingiram a maioridade.')
 print(f'{menoridade} pessoas ainda não atingiram a maioridade.')
+
+# Peso de 5 pessoas, qual maior e menor?
+lista = []
+for p in range(5):
+    peso = float(input(f'Digite o peso da pessoa {p+1}:'))
+    lista.append(peso)
+maior = max(lista)
+menor = min(lista)
+print(f'O maior peso foi {maior}')
+print(f'O menor peso foi {menor}')
+
+# Desafio leia nome, idade e sexo de 4 pessoas, retorne media de idade do grupo, homem mais velho e quantas mulheres tem menos de 20 anos
+lista = []
+mulheres_under_20 = []
+homem_mais_velho = ['', 0] #[nome, idade]
+total_mulheres_under_20 = 0
+#loop para coleta dos dados
+for d in range(4):
+    nome = input('Digite seu nome: ')
+    idade = int(input('Digite sua idade: '))
+    sexo = input('Digite seu sexo [M/F]: ').upper()
+
+    if sexo == "M" and idade > homem_mais_velho[1]:
+        homem_mais_velho = [nome, idade]
+    
+    if sexo == "F" and idade < 20:
+        total_mulheres_under_20 += 1
+    
+    lista.append([nome, idade, sexo])
+
+    if sexo == 'F':
+        mulheres_under_20.append(idade)
+
+idades_grupo = [pessoa[1] for pessoa in lista]
+media_idade = sum(idades_grupo) / len(idades_grupo)
+
+print(f'\nMédia de idade do grupo: {media_idade:.2f} anos')
+print(f'Nome do homem mais velho: {homem_mais_velho[0]}')
+print(f'Total de mulheres com menos de 20 anos: {total_mulheres_under_20}')
