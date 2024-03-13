@@ -10,22 +10,34 @@ for c in range(10, -1, -1):
     print(c)
     sleep(1)
 
-# Números pares que estão entre 1 e 50
+# 2 Números pares que estão entre 1 e 50
 for c in range(2, 51, 2):
-    print(c)
-
-# Soma entre todos os número impares que são multiplos de 3 entre 1 e 500
+    print(c, end='')
+#Resolução mais longa
+for n in range(1,51):
+    if n % 2 == 0:
+        print(n, end=" ")
+print('Acabou!')    
+# 3 Soma entre todos os número impares que são multiplos de 3 entre 1 e 500 - errei
 s = 0
 for c in range(3, 500, 3):
     s += c
 print(f"O somaatório de todos os múltiplos de 3 é {s}") 
+# Resolução Guanabara
+soma = 0
+cont = 0
+for c in range(1, 501, 2):
+    if c % 3 == 0:
+        soma += c
+        cont += 1
+print(f'A soma de todos os {soma} valores solicitados é {cont}')
 
-# Tabuada
+# 4 Tabuada
 num = int(input('Digite um número para ver sua tabuada:'))
 for c in range(0,11)
     print(f'{num} x {c} = {num x c}')
 
-# Motrar soma apenas de pares
+# 5 Motrar soma apenas de pares
 ns = []
 for p in range(6):
     n = int(input('Digite um número:'))
@@ -33,13 +45,29 @@ for p in range(6):
         ns.append(n)
 soma = sum(ns)
 print("A soma dos números pares digitados é", soma)
+# Resolução Guanabara
+soma = 0
+cont = 0
+for c in range(1, 7):
+    num = int(input(f'Digite o {c}º valor'))
+    if num % 2 == 0:
+        soma += num
+        cont += 1
+print(f'Você informou {cont} número pares e a soma foi {soma}')
 
-# A partir do primeiro termo e razão de uma PA, mostrar os 10 primeiros termos dessa PA.
+# 6 A partir do primeiro termo e razão de uma PA, mostrar os 10 primeiros termos dessa PA.
 p = int(input('Digite o primeiro termo:'))
 r = int(input('Qual a razão dessa PA?'))
 i = p + 10 * r
 for c in range(p, i, r):
     print(c)
+#Resolução Guanabara
+primeiro = int(input('Primeiro termo:'))
+razão = int(input('Razão:'))
+décimo = primeiro + (10-1)*razão
+for c in range(primeiro, décimo + razão, razão):
+    print(f'{c}', end=" → ")
+print('Acabou')
 
 # Se é numero primo - com if
 n = int(input('Digite um número:'))
