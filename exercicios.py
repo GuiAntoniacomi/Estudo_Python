@@ -75,7 +75,7 @@ n = int(input('Digite um número:'))
         print(f'{n} é primo')
     else:
         print(f'{n} não é primo')
-        
+
 # Resolução Guanabara:
 n = int(input('Digite um número:'))
 tot = 0
@@ -137,7 +137,7 @@ lista = []
 mulheres_under_20 = []
 homem_mais_velho = ['', 0] #[nome, idade]
 total_mulheres_under_20 = 0
-#loop para coleta dos dados
+
 for d in range(4):
     nome = input('Digite seu nome: ')
     idade = int(input('Digite sua idade: '))
@@ -160,3 +160,26 @@ media_idade = sum(idades_grupo) / len(idades_grupo)
 print(f'\nMédia de idade do grupo: {media_idade:.2f} anos')
 print(f'Nome do homem mais velho: {homem_mais_velho[0]}')
 print(f'Total de mulheres com menos de 20 anos: {total_mulheres_under_20}')
+
+# Desafio palindromo
+frase = str(input('Digite uma frase: ')).strip().upper()
+palavras = frase.split()
+junto = " ".join(palavras)
+inverso = ' '
+for letra in range (len(junto) -1, -1, -1):
+    inverso += junto[letra]
+if inverso == junto:
+    print(f'A frase digitada é um palíndromo')
+else:
+    print(f'A frase digitada não é um palíndromo')
+# Sem for
+frase = str(input('Digite uma frase: ')).strip().upper()
+palavras = frase.split()
+junto = " ".join(palavras)
+inverso = junto[::-1]
+if inverso == junto:
+    print(f'A frase digitada é um palíndromo')
+else:
+    print(f'A frase digitada não é um palíndromo')
+
+
