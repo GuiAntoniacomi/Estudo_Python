@@ -161,6 +161,7 @@ print(f'\nMédia de idade do grupo: {media_idade:.2f} anos')
 print(f'Nome do homem mais velho: {homem_mais_velho[0]}')
 print(f'Total de mulheres com menos de 20 anos: {total_mulheres_under_20}')
 
+<<<<<<< Updated upstream
 # Desafio palindromo
 frase = str(input('Digite uma frase: ')).strip().upper()
 palavras = frase.split()
@@ -183,3 +184,30 @@ else:
     print(f'A frase digitada não é um palíndromo')
 
 
+=======
+# Resolução Guanabara
+somaidade = 0 
+media_idade = 0
+maioridadehomem = 0
+nomevelho = " "
+totmulher20 = 0
+for p in range(4):
+    print(f'---- {p+1}ª PESSOA ----')
+    nome = str(input('Nome:')).strip()
+    idade = int(input('Idade: '))
+    sexo = str(input('Sexo [M/F]: ')).strip()
+    somaidade += idade
+    if p == 1 and sexo in 'Mm':
+        maioridade = idade
+        nomevelho = nome
+    if sexo in 'Mm' and idade > maioridadehomem:
+        maioridadehomem = idade
+        nomevelho = nome
+    if sexo in 'Ff' and idade < 20:
+        totmulher20 += 1
+
+media_idade = somaidade / 4
+print(f'A média de idade do grupo é de {media_idade} anos')
+print(f'O homem mais velho tem {maioridadehomem} anos e se chama {nomevelho}.')
+print(f'Ao todo são {totmulher20} mulheres com menos de 20 anos') 
+>>>>>>> Stashed changes
