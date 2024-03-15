@@ -31,3 +31,39 @@ while True:
     else:
         print('Opção inválida. Tente novamente.')
         sleep(1)
+
+# Resolução Guanabara
+n1 = int(input("Primeiro valor: "))
+n2 = int(input("Segundo valor: "))
+opção = 0
+while opção != 5:
+    print('''
+    [ 1 ] Somar
+    [ 2 ] Multiplicar
+    [ 3 ] Maior
+    [ 4 ] Novos números
+    [ 5 ] Sair do programa''')
+    opção = int(input("Digite a opção desejada: "))
+    if opção == 1:
+        soma = n1 + n2
+        print(f'Soma entre {n1} e {n2} é igual a {soma}.')
+    elif opção == 2:
+        mult = n1 * n2
+        print(f'Multiplicação entre {n1} e {n2} é igual a {mult}.')
+    elif opção == 3:
+        if n1 > n2:
+            maior = n1
+        else:
+            maior = n2
+    elif opção == 4:
+        print('Informe os números novamente: ')
+        n1 = int(input("Primeiro valor: "))
+        n2 = int(input("Segundo valor: "))
+    elif opção == 5:
+        print('Finalizando...')
+    else:
+        print('Opção inválida. Tente novamente.')
+    print("=-=" * 10)
+print('Fim do programa! Volte sempre!')
+
+      

@@ -10,3 +10,4 @@ fibonacci_string = " → ".join(map(str, fibo_seq[:n]))
 
 print("Sequência de Fibonacci com os primeiros", n, "números:")
 print(fibonacci_string)
+print('FIM')
