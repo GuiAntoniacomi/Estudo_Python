@@ -1,6 +1,4 @@
-qtdd_produto = 0
-valor_total = 0
-over_th = 0
+qtdd_produto = valor_total = over_th = 0
 cheaper = float('inf')
 
 while True:
@@ -22,3 +20,27 @@ while True:
         print(f'Você comprou {over_th} produtos acima de R$1000,00.')
         print(f'O produto mais barato que você comprou foi {nome_cheaper} que custa R${cheaper:.2f}.')
         break
+
+# Resoluçao Guanabara
+total = totmil = menor = cont = 0
+barato = ' '
+while True:
+    produto = str(input('Nome do produto: '))
+    preço = float(input('Preço do produto: R$ '))
+    cont += 1
+    total += preço
+    if preço > 1000:
+        totmil += 1
+    if cont == 1 or preço < menor:
+        menor = preço
+        barato = produto
+    resp = ' '
+    resp = str(input(' Quer continuar? [S/N] '))strip().upper()[0]
+    while resp not in 'SN':
+        resp = str(input(' Quer continuar? [S/N] '))strip().upper()[0]
+    if resp == "N":
+        break
+print({'FIM DO PROGRAMA':-^40})
+print(f' O total da compra foi R${total:.2f}')
+print(f'Temos {totmil} produtos custando mais de R$1000,00')
+print(f'O produto mais barato foi {barato} que custa R${menor:.2f}')
