@@ -6,4 +6,7 @@ while True:
         break
     s += n
     cont += 1
-print(f'Foram digitados {cont} número e a soma deles resulta em {s}.')
+if cont == 1:
+    print(f'Foi digitado apenas {cont} número e ele foi {s}.')
+else:
+    print(f'Foram digitados {cont} números e a soma deles resulta em {s}.')

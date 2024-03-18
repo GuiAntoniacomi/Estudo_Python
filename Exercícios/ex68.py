@@ -7,7 +7,7 @@ while True:
     n = int(input('Diga seu número:'))
     c = randint(1,100)
     total = n + c
-    escolha = str(input('Par ou ímpar? [P/I]')).upper()
+    escolha = str(input('Par ou ímpar? [P/I]')).upper()[0]
     
     # Verificador de par ou ímpar
     if total % 2 == 0:
