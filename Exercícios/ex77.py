@@ -1,5 +1,7 @@
-palavras = ('python', 'programação', 'exemplo', 'tupla', 'string', 'aleatório', 'lista', 'função', 'desenvolvimento', 'openai')
+palavras = ('python', 'programação', 'exemplo', 'tupla', 'string', 'aleatório', 'lista', 'função', 'desenvolvimento', 'openai', 'trabalhar')
 
-for palavra in palavras:
-    vogais = [letra for letra in palavra if letra.lower() in 'aeiou']
-    print(f'Na palavra {palavra.upper()}, temos as vogais {" ".join(vogais)}')
+for p in palavras:
+    print(f'\nNa palavra {p} temos', end=' ')
+    for letra in p:
+        if letra.lower() in 'aeiou':
+            print(letra, end=' ')
