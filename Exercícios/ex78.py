@@ -17,7 +17,14 @@ print(f'O maior valor digitado foi {maior} nas posições {pos_maiores}.')
 print(f'O menor valor digitado foi {menor} nas posições {pos_menores}.')
 '''
 
-valores = [int(input('Digite um valor para a Posição 0:')), int(input('Digite um valor para a Posição 0:')), int(input('Digite um valor para a Posição 0:')), int(input('Digite um valor para a Posição 0:')), int(input('Digite um valor para a Posição 0:'))]
+valores = [
+    int(input('Digite um valor para a Posição 0:')),
+    int(input('Digite um valor para a Posição 0:')),
+    int(input('Digite um valor para a Posição 0:')),
+    int(input('Digite um valor para a Posição 0:')),
+    int(input('Digite um valor para a Posição 0:'))
+]
+
 print('=-'*30)
 print(f'Você digitou os valores {valores}')
 maior_valor = max(valores)
@@ -40,6 +47,7 @@ elif len(pos_maior) == 4:
     print(f'O maior valor digitado foi {maior_valor} nas posições {pos_maior[0]}, {pos_maior[1]}, {pos_maior[2]} e {pos_maior[3]}')
 else:
     print(f'Foi digitado apenas o valor {maior_valor}, ele aparece em todas as posições, é o maior e o menor da lista.')
+    
 if len(pos_menor) == 1:
     print(f'O menor valor digitado foi {menor_valor} na posição {pos_menor[0]}')
 elif len(pos_menor) == 2:
@@ -50,3 +58,26 @@ elif len(pos_menor) == 4:
     print(f'O menor valor digitado foi {menor_valor} nas posições {pos_menor[0]}, {pos_menor[1]}, {pos_menor[2]} e {pos_menor[3]}')
 
 
+# Resolução Guanabara
+listanum = []
+for c in range(0, 5):
+    listanum.append(int(input(f'Digite um valor para a Posição {c}: ')))
+    if c ==0:
+        maior = menor = listanum[c]
+    else:
+        if listanum[c] > maior:
+            maior = listanum[c]
+        if listanum[c] < menor:
+            menor = listanum[c]
+print('=-'*30)
+print(f'Você digitou os valores {listanum}')
+print(f'O maior valor digitado foi {maior} nas posições ', end=" ")
+for i, v in enumerate(listanum): # i = indice e v = valor
+    if v == maior:
+        print(f'{i}...', end=" ")
+print()
+print(f'O menor valor digitado foi {menor} nas posições ', end=" ")
+for i, v in enumerate(listanum):
+    if v == menor:
+        print(f'{i}...', end="")
+print()
