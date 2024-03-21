@@ -22,3 +22,17 @@ for j in range(qtdd):
 print('=-'*30)
 print(f'{"Jogos gerados! Boa sorte!":^60}')
 print('=-'*30)
+
+# Resolução Guanabara
+lista = []
+qtdd = int(input('Quantos jogos gostaria de gerar? '))
+cont = 0
+while True:
+    num = randint(1, 60)
+    if num not in lista:
+        lista.append(num)
+        cont += 1   
+    if cont >= 6:
+        break
+lista.sort()
+print(f'Os numeros sorteados foram {lista}')

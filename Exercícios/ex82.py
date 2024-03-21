@@ -19,7 +19,7 @@ print(f'A lista de números ímpares é {ímpares}')
 
 # Resolução Guanabara
 
-num = list()
+'''num = list()
 pares = list()
 impares = list()
 while True:
@@ -36,4 +36,4 @@ print("-="*30)
 print(f'A lista completa é {num}.')
 print(f" a lista de pares é {pares}.")
 print(f'A lista de impares é {impares}.')
-print('-='*30)
+print('-='*30)'''

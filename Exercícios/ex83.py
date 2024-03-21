@@ -19,7 +19,7 @@ else:
     print('Sua expressão é inválida!')
 
 # Resolução Guanabara
-expr = str(input('Digite a expressão: '))
+'''expr = str(input('Digite a expressão: '))
 pilha = []
 for simb in expr:
     if simb == '(':
@@ -33,5 +33,5 @@ for simb in expr:
 if len(pilha) == 0:
     print('Sua expressão é válida!')
 else:
-    print('Sua expressão é inválida!')
+    print('Sua expressão é inválida!')'''
 
