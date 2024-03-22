@@ -24,15 +24,26 @@ print(f'{"Jogos gerados! Boa sorte!":^60}')
 print('=-'*30)
 
 # Resolução Guanabara
+'''
 lista = []
 qtdd = int(input('Quantos jogos gostaria de gerar? '))
-cont = 0
-while True:
-    num = randint(1, 60)
-    if num not in lista:
-        lista.append(num)
-        cont += 1   
-    if cont >= 6:
-        break
-lista.sort()
+tot = 1
+while tot <= qtdd:
+    cont = 0
+    while True:
+        num = randint(1, 60)
+        if num not in lista:
+            lista.append(num)
+            cont += 1   
+        if cont >= 6:
+            break
+    lista.sort()
+    jogos.append(lista[:])
+    lista.clear()
+    tot += 1
+print("-="*3, f'SORTEANDO {qtdd} JOGOS', "-="*3)  
+for i, l in enumerate(jogos):
+    print(f'jogo{i+1}: {l}')^
+    sleep(1)     
 print(f'Os numeros sorteados foram {lista}')
+'''
