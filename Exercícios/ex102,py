@@ -1,0 +1,21 @@
+def fatorial(num = 1, show=False):
+    f = 1
+    sequencia = ""
+    for c in range(num, 0, -1):
+        f *= c
+        if show:
+            sequencia += str(c) + " x " if c > 1 else str(c)
+    if show:        
+        return sequencia + " = " + str(f)
+    else:
+        return f
+    
+
+n = int(input('Digite um número: '))
+f1 = fatorial(n, show=False)
+f2 = fatorial(n, show=True)
+
+print(f1)
+print('=-'*len(f2))
+print(f2)
+

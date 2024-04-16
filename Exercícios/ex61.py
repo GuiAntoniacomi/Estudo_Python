@@ -1,4 +1,4 @@
-p = int(input('Digite o primeiro termo:'))
+'''p = int(input('Digite o primeiro termo:'))
 r = int(input('Qual a razão dessa PA?'))
 i = p + 10 * r
 for c in range(p, i, r):
@@ -12,14 +12,14 @@ contador = 0
 while contador < 10:  # 10 representa o número de termos que você quer imprimir
     print(p, end=' ')
     p += r  # Adiciona a razão para obter o próximo termo
-    contador += 1
+    contador += 1'''
 
 # Resolução Guanabara
 print('Gerador de PA')
 print('=-' * 10)
 p = int(input('Primeiro termo: '))
 r = int(input('Razão da PA: '))
-termo = primeiro
+termo = p
 cont = 1
 while cont <= 10:
     print(f'{termo} → ', end=" ")
