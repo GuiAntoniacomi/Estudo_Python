@@ -1,3 +1,6 @@
+from random import randint
+
+
 class Agencia:
 
     def __init__(self, telefone, cnpj, numero):
@@ -23,29 +26,52 @@ class Agencia:
 
     def adicionar_cliente(self, nome, cpf, patrimonio):
         self.clientes.append((nome, cpf, patrimonio))
-        self.caixa += patrimonio
-        print(f'Cliente {nome} adicionado com sucesso')
+        
         
 
 class AgenciaVirtual(Agencia):
 
-    pass
+    def __init__(self, site, telefone, cnpj):
+        self.site = site
+        super().__init__(telefone, cnpj, 1000)
+        self.caixa = 1000000
+        self.caixa_paypal = 0
+
+    def depositar_paypal(self, valor):
+        self.caixa -= valor
+        self.caixa_paypal += valor
+
+    def sacar_paypal(self, valor):
+        self.caixa_paypal -= valor
+        self.caixa += valor
+
 
 class AgenciaComun(Agencia):
 
-    pass
+    def __init__(self, telefone, cnpj):
+        super().__init__(telefone, cnpj, numero=randint(1001, 9999))
+        self.caixa = 1000000
+
 
 class AgenciaPremium(Agencia):
 
-    pass
+    def __init__(self, telefone, cnpj):
+        super().__init__(telefone, cnpj, numero=randint(1001, 9999))
+        self.caixa = 10000000
+
+    def adicionar_cliente(self, nome, cpf, patrimonio):
+        if patrimonio > 1000000:
+            super().adicionar_cliente(nome, cpf, patrimonio)
+        else:
+            print(f'Cliente {nome} não pode ser adicionado na agência Premium.')
 
 
+if __name__ == '__main__':
 
+    agencia1 = Agencia(22434563, 123158761, 8943)
 
+    agencia_comum = AgenciaComun(33334444, 123546876321)
+    agencia_comum.caixa_agencia()
 
-
-agencia1 = Agencia(22434563, 123158761, 8943)
-
-agencia_virtual = AgenciaVirtual(33334444, 152000000, 1000)
-agencia_virtual.caixa = 15000
-agencia_virtual.caixa_agencia()
+    agencia_premium = AgenciaPremium(33335555, 12354687633213)
+    agencia_premium.caixa_agencia()

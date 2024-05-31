@@ -108,5 +108,3 @@ class CartaoCredito:
             self._senha = nova_senha
         else:
             print('A senha deve conter 4 dígitos numéricos')
-
-
